@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    if (message) && message.length
+      strong #{message}
+    h1(align="center") LOGIN
+    h4 Please login below
+    form(action='/users/loginForm', method='post')
+        .form-group
+          | Username
+          input.form-control(type='text', name='uname')
+        .form-group
+          | Password
+          input.form-control(type='password', name='pwd')
+        button.btn.btn-default(type='submit')
+          | Login
